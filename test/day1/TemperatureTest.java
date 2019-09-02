@@ -1,25 +1,37 @@
 package day1;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 
 class TemperatureTest {
 
-	@Test
 	
-	void testConvertToFarenhite() {
+	@Test
+	void testConvert100degreeCelcuisToFarenhite(){
 		Temperature temperature=new Temperature();
-		Double actual=temperature.convertToFarenhite(37.4);
-		Double expected=99.32;
+		Double actual=temperature.convertToFarenhite(100.0);
+		
+		Double expected=212.0;
 		assertEquals(expected, actual);
 	}
 
 	@Test
-	void testConvertToCelsius() {
+	void testConvert39degreeCelcuisToFarenhite(){
 		Temperature temperature=new Temperature();
-		Double actual=temperature.convertToCelsius(100.0);
-		Double expected=37.78;
+		Double actual=temperature.convertToFarenhite(39.0);
+		
+		Double expected=102.2;
 		assertEquals(expected, actual);
 	}
+
+	
+	@Test
+	void testConvert212degreeFarenhiteToCelsius() {
+		Temperature temperature=new Temperature();
+		Double actual=temperature.convertToCelsius(212.0);
+		
+		Double expected=100.0;
+		assertEquals(expected, actual);
+	}
+	
 }
